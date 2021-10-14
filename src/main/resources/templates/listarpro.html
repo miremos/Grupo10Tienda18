@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head">
+
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="body.css">
+<link rel="stylesheet" href="tabla.css">
+</head>
+<body>
+
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container py-4">
+
+		<div class="card bg-light">
+		
+			<div class="card-header" th:text="${titulo}"></div>
+			<div class="card-body">
+			
+			
+			<nav class="navbar navbar-light bg-light">
+			<div class="container-fluid">
+		
+		<form class="d-flex" th:action="@{/marcaproveedor}"  th:object="${coche}" method="get" >
+				
+					<input class="form-control me-2" type="number"  name="id" 
+					placeholder="Numero de cedula" aria-label="Search" required>
+					
+				<button class="btn btn-outline-primary"  type="submit"  >BUSCAR</button>
+				
+				
+			</form>
+			</div>
+			</nav>
+			
+			
+				<h4 class="card-title">
+					<a th:href="@{/formpro}" class="btn btn-primary">CREAR PROVEDOR</a>
+				</h4>
+			
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>NIT</th>
+							<th>CIUDAD</th>
+							<th>DIRECCION</th>
+							<th>NOMBRE</th>
+							<th>TELEFONO</th>
+							<th>EDITAR</th>
+							<th>ELIMINAR</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+					<tr th:each="proveedor: ${proveedores}">							
+							<td th:text="${proveedor.id}"></td>
+							<td th:text="${proveedor.ciudad_proveedor}"></td>
+							<td th:text="${proveedor.direccion_proveedor}"></td>
+							<td th:text="${proveedor.nombre_proveedor}"></td>
+							<td th:text="${proveedor.telefono_proveedor}"></td>
+							<td><a class="btn  btn-sm"
+								th:href="@{/formpro/} + ${proveedor.id}" ><img class="img"
+							th:src="@{/images/editar.png}" alt="30" width="30" /></a></td>
+							<td><a class="btn  btn-sm"
+								th:href="@{/eliminarpro/} + ${proveedor.id}" 
+								onclick="return confirm('Seguro que quieres eliminar?');"><img
+							th:src="@{images/eliminar.png}" alt="30" width="30" /></a></td>
+						</tr>
+						
+					</tbody>
+
+				</table>
+				<nav th:replace="paginator-nav :: paginator"></nav>
+			</div>
+		</div>
+		
+	</div>
+	
+	
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

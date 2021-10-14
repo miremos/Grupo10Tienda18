@@ -1,0 +1,31 @@
+@charset "ISO-8859-1";
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+
+h2{
+	text-align: center;
+	 
+	
+}
+
+.contenedor{
+	margin-top: 5%;
+	width: 50%;
+	align-items: center;
+	margin-left: 42%;
+	
+	
+}
+
+.imagen{
+	margin-left: 60px;
+	width: 80%;
+	padding-bottom: 12px;
+	
+}

@@ -1,0 +1,36 @@
+h1{
+  
+  font-family: Candara;
+  text-transform: uppercase;
+  color: black;
+  font-size: 650%;
+}
+
+span{
+    color: #e51a4c;
+}
+.animate__animated.animate__backInDown{
+ --animate-duration: 2.5s;
+}
+h4{
+    font-family: Candara;
+     font-size: 250%;
+}
+span{
+    color: #e51a4c;
+}
+.animate__animated.animate__zoomInUp{
+    --animate-duration: 3s;
+}
+footer {
+  background-color: #e51a4c;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  font-family: Candara;
+  font-size: 130%;
+}
+.animate__animated.animate__fadeInLeftBig{
+      --animate-duration: 2.5s;
+}

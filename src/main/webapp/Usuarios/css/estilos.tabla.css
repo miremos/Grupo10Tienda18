@@ -1,0 +1,52 @@
+@charset "ISO-8859-1";
+
+body{
+	margin-left: 100px;
+}
+
+
+h1{
+	text-align: center;
+	
+}
+
+table{
+	width: 100%;
+	margin-top: 20px;
+	display:flex;
+	margin-left: 80px;
+	
+}
+
+.agregar{
+	background: blue;
+	text-decoration: none;
+	
+	
+	
+}
+
+.vinculo{
+	text-decoration: none;
+	
+}
+
+th{
+	text-align: center;
+	font-size: 18px;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	background: #73C8FC;
+	width: 190px;
+}
+
+td{
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+
+
+
+
+
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="layout/layout :: head">
+
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="body.css">
+<link rel="stylesheet" href="tabla.css">
+</head>
+<body>
+
+
+
+	
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container py-4">
+
+		<div class="card bg-light">
+		
+			<div class="card-header" th:text="${titulo}"></div>
+			<div class="card-body">
+			
+			
+			<nav class="navbar navbar-light bg-light">
+			<div class="container-fluid">
+		
+		
+			</div>
+			</nav>
+			
+	
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>CODIGO</th>
+							<th>CEDULA CLIENTE</th>
+							<th>CEDULA USUARIO</th>
+							<th>IVA</th>							
+							<th>VALOR VENTA</th>
+							<th>TOTAL VENTA</th>							
+							<th>ELIMINAR</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+					<tr th:each="cliente: ${venta}">										
+							<td th:text="${cliente.id}"></td>
+							<td th:text="${cliente.cedula_cliente}"></td>
+							<td th:text="${cliente.cedula_usuario}"></td>
+							<td th:text="${cliente.iva_venta}"></td>							
+							<td th:text="${cliente.valor_venta}"></td>
+							<td th:text="${cliente.total_venta}"></td>
+							
+							<td><a class="btn btn-sm"
+								th:href="@{/eliminarventa/} + ${cliente.id}" 
+								onclick="return confirm('Seguro que quieres eliminar?');"><img
+							th:src="@{images/eliminar.png}" alt="30" width="30" /></a></td>
+						</tr>
+						
+					</tbody>
+
+				</table>
+				<nav th:replace="paginator-nav :: paginator"></nav>
+			</div>
+			<div class="card text-center bg-success text-white mb-3">
+                            <div class="card-body">
+                                <h3 >VENTA TOTAL</h3>
+                                <h4 class="display-4">
+                                    [[${new java.text.DecimalFormat('$#,##0.00').format(saldoTotal)}]]
+                                </h4>
+                            </div>
+                        </div>
+			
+			
+			<div>
+				<h4 class="card-title">
+					<a href="reportes.jsp" class="btn btn-primary">VOLVER</a>
+				</h4>
+			</div>
+		</div>
+		
+	</div>
+	
+	
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

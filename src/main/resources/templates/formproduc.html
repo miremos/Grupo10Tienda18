@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/css/estilos_agregar.css}" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+<head th:replace="layout/layout :: head"></head>
+<body>
+
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container py-4">
+
+		<div class="card bg-dark text-white" >
+			<div class="card-header" th:text="${titulo}"></div>
+			
+
+				<div th:object="${proveedor}" th:remove="tag">
+					<ul th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+						<li th:each="err: ${#fields.errors('*')}" th:text="${err}"></li>
+					</ul>
+				</div>
+				
+				
+				<form th:action="@{/formpro}" th:object="${proveedor}" method="post" enctype="multipart/form-data">
+				<img class="img" th:src="@{/images/4.jpg}" alt="100" width="370" />
+				
+				<div class="card-body">
+				<div class="contenedor">
+				
+				
+				
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Ciudad</label>
+						<div class="col-sm-6">
+							<input type="text" name="ciudad_proveedor" class="form-control"
+								th:errorclass="'form-control alert-danger'" /> <small
+								class="form-text text-danger"
+								th:if="${#fields.hasErrors('ciudad_proveedor')}" th:errors="*{ciudad_proveedor}"></small>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Direccion</label>
+						<div class="col-sm-6">
+							<input type="text" name="direccion_proveedor" class="form-control"
+								th:errorclass="'form-control alert-danger'" /> <small
+								class="form-text text-danger"
+								th:if="${#fields.hasErrors('direccion_proveedor')}" th:errors="*{direccion_proveedor}"></small>
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">NIT</label>
+						<div class="col-sm-6">
+							<input type="number" th:field="*{nit_proveedor}" class="form-control"
+								th:errorclass="'form-control alert-danger'" /> <small
+								class="form-text text-danger"
+								th:if="${#fields.hasErrors('nit_proveedor')}" th:errors="*{nit_proveedor}"></small>
+						</div>
+					</div>
+					
+					
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Nombre</label>
+						<div class="col-sm-6">
+							<input type="text" name="nombre_proveedor" class="form-control"
+								th:errorclass="'form-control alert-danger'" /> <small
+								class="form-text text-danger"
+								th:if="${#fields.hasErrors('nombre_proveedor')}" th:errors="*{nombre_proveedor}"></small>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Telefono</label>
+						<div class="col-sm-6">
+							<input type="number" class="form-control" name="telefono_proveedor"
+								th:errorclass="'form-control alert-danger'" /> <small
+								class="form-text text-danger"
+								th:if="${#fields.hasErrors('telefono_proveedor')}" th:errors="*{telefono_proveedor}"></small>
+						</div>
+					</div>
+				
+					<div class="form-group row">
+						<div class="col-sm-6">
+							<input type="submit" value="Crear Cliente" class="btn btn-secondary" />
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				</form>
+				
+			
+		</div>
+	</div>
+	
+</body>
+</html>

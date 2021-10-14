@@ -1,0 +1,185 @@
+@charset "ISO-8859-1";
+
+body{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	
+	
+}
+
+.form1{
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	
+}
+
+.form1 form{
+	display:flex;
+	flex-direction: row;
+	width: 30%;
+	margin-left: 90px;
+	
+}
+
+.form1 label{
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-left: 20px;
+	
+}
+
+.form1 .inputs{
+	width: 250px;
+}
+
+.titulos {
+	font-size: 19px;
+display: inline;
+margin-left: 175px;
+padding-top: 20px;
+
+	
+}
+
+
+.form2{
+	margin-top: 10px;
+	margin-left: 60px;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	
+}
+
+.form2 form{
+	width: 270px;
+	display:flex;
+	flex-direction: row;
+	
+	margin-left: 50px;
+	margin-right: 40px;
+	height: 35px;
+	
+}
+
+.form2 .input1{
+	height: 35px;
+	width: 290px;
+	margin-right: 50px;
+	
+}
+
+.form2 .input2{
+	margin-right: 80px;
+}
+
+.form3{
+	margin-top: 10px;
+	margin-left: 60px;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	
+}
+
+.form3 form{
+	width: 270px;
+	display:flex;
+	flex-direction: row;
+	
+	margin-left: 50px;
+	margin-right: 40px;
+	height: 35px;
+	
+}
+
+.form3 .input1{
+	height: 35px;
+	width: 290px;
+	margin-right: 50px;
+	
+}
+
+.form3 .input2{
+	margin-right: 80px;
+}
+
+.form4{
+	margin-top: 10px;
+	margin-left: 60px;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	
+}
+
+.form4 form{
+	width: 270px;
+	display:flex;
+	flex-direction: row;
+	
+	margin-left: 50px;
+	margin-right: 40px;
+	height: 35px;
+	
+}
+
+.form4 .input1{
+	height: 35px;
+	width: 290px;
+	margin-right: 50px;
+	
+}
+
+.form4 .input2{
+	margin-right: 80px;
+}
+
+.total1{
+	margin-top: 10px;
+	height: 35px;
+	display: inline;
+	
+}
+.t1 label{
+	font-weight: bold;
+}
+
+.t1{
+	margin-top: 10px;
+	margin-left: 918px;
+}
+
+.total2{
+	margin-top: 10px;
+	height: 35px;
+	display: inline;
+}
+
+.total3{
+	margin-top: 10px;
+	height: 35px;
+	display: inline;
+}
+
+.t2{
+	
+	margin-left: 942px;
+}
+.t2 label{
+	font-weight: bold;
+}
+
+.t3{
+	
+	margin-left: 905px;
+}
+.t3 label{
+	font-weight: bold;
+}
+
+
+

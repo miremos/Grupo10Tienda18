@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head >
+<meta charset="ISO-8859-1">
+<title>Ventas</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" >
+<link rel="stylesheet" href="ventas.css">
+<link  rel="icon"   href="favicon.png" type="image/png" />
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+<body>
+<header th:replace="layout/layout :: header"></header>
+
+<h1 class="titulo">Ventas</h1>
+
+
+<div class="form1" >
+
+
+	
+	
+	<form th:action="@{/marcaclienteventa}" th:object="${coche}" method="get" class="form-inline my-2 my-lg-0" enctype="multipart/form-data">
+      <label class = "label" >Cedula</label>
+      <input class="form-control mr-sm-2" type="number"  name="id"  placeholder="Numero de Cedula" aria-label="Search">
+      <button class="btn btn-info" style="width:150px; margin-left:10px; " type="submit"><i class="fas fa-search"></i> Buscar</button>
+      
+    </form>
+    <ul>
+  <li th:each="data : ${cochesPorMarca}" th:text="${data.nombre_cliente}" > </li>
+  
+  
+</ul>
+    
+    <label class = "label" >Cliente</label> <input class = "inputs"  name="nombreCliente"   >
+     <label class = "label" >Consecutivo</label> <input class = "inputs" type="text" name="consecutivo" >
+     
+ 
+   </div> 
+   
+        
+     <h4 class= "titulos">Cod. Producto</h4>
+     <h4 class= "titulos">Nombre Producto</h4>
+     <h4 class= "titulos">Cantidad</h4>
+     <h4 class= "titulos" >Valor Total</h4>
+     
+      
+      <div class = "form2">
+       
+     <form th:action="@{/marcaproductoventa}" th:object="${coche}" method="get" class="form-inline my-2 my-lg-0" >
+      <input class="form-control mr-sm-2" type="search" name="nombre_producto" placeholder="Codigo" aria-label="Search">
+      <button class="btn btn-info" style="width:50px; margin-left:10px; " type="submit"><i class="fas fa-search"></i></button>
+<ul>
+  <li th:each="dataa : ${cochesPorMarcab}" th:text="${dataa.nombre_producto}"></li>
+</ul>
+    </form>
+    
+    <input class = "input1" type="text" name="nombreProducto" >
+    <input class = "input2" type="text" name="cantidad" >
+    <input class = "input3" type="text" name="valorTotal" >
+      
+     </div>
+     <div class = "form3">
+     
+    <form action="#" method="get" class="form-inline my-2 my-lg-0" >
+      <input class="form-control mr-sm-2" type="search" name="codigo" placeholder="Codigo" aria-label="Search">
+      <button class="btn btn-info" style="width:50px; margin-left:10px; " type="submit"><i class="fas fa-search"></i></button>
+    </form>
+    
+     <input class = "input1" type="text" name="nombreProducto" >
+    <input class = "input2" type="text" name="cantidad" >
+    <input class = "input3" type="text" name="valorTotal" >
+    
+     </div>
+     
+     
+    <div class = "form4">
+     
+    <form action="#" method="get" class="form-inline my-2 my-lg-0" >
+      <input class="form-control mr-sm-2" type="search" name="codigo" placeholder="Codigo" aria-label="Search">
+      <button class="btn btn-info" style="width:50px; margin-left:10px; " type="submit"><i class="fas fa-search"></i></button>
+    </form>
+    
+     <input class = "input1" type="text" name="nombreProducto" >
+    <input class = "input2" type="text" name="cantidad" >
+    <input class = "input3" type="text" name="valorTotal" >
+    
+     </div>
+    
+     
+     
+     
+     
+   <div class="t1">
+   
+     <label class = "label" >TOTAL VENTA</label>
+      <input class = "total1" type="text" name="totalVenta" >
+      
+   </div>  
+   
+   <div class="t2">
+   
+      <label class = "label" >TOTAL IVA</label>
+      <input class = "total2" type="text" name="totalIva" >
+      
+   </div>
+   
+   <div class="t3">
+   
+      <label class = "label" >TOTAL CON IVA</label>
+      
+      <input class = "total3" type="text" name="total+iva" >
+      
+    </div>
+    
+    <div class="boton_confirmar">
+    <button class="btn btn-info" style="width:50px; margin-left:600px; " type="submit"><i class="far fa-check-circle"></i> Confirmar </button>
+    </div>
+    
+    
+    
+    
+     
+
+   
+
+</body>
+</html>

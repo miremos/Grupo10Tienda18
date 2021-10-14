@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+		<div  class="container mt-5">
+		<h4>DATOS DEL USUARIO</h4>
+		<br>
+		<div class="card bg-dark text-black" >
+		<div class="row justify-content-center">
+		<img class="img" th:src="@{/images/productos.jpg}" alt="50" width="370" />
+		<div class="col-md-8">
+			
+		
+		
+				<table class="table table-striped">
+				
+					<thead>
+						
+					</thead>
+					<tbody>
+					
+					<tr th:each="data: ${cochesPorMarca}">										
+							
+						<ul >
+					<li class="list-group-item active" th:text="'CEDULA: '+${data.id}"></li>					
+					<li class="list-group-item active" th:text="'NOMBRE: '+${data.nombre_usuario}"></li>					
+					<li class="list-group-item" th:text="'EMAIL: '+${data.email_usuario}"></li>
+					<li class="list-group-item" th:text="'PASSWORD: '+${data.password}"></li>					
+					<li class="list-group-item" th:text="'USUARIO: '+${data.usuario}"></li>
+				</ul>	
+							<td><a class="btn  btn-sm"
+								th:href="@{/formusu/} + ${data.id}" ><img class="img"
+							th:src="@{/images/editar.png}" alt="30" width="30" /></a></td>
+							<td><a class="btn btn-sm"
+								th:href="@{/eliminarusu/} + ${data.id}" 
+								onclick="return confirm('Seguro que quieres eliminar?');"><img
+							th:src="@{images/eliminar.png}" alt="30" width="30" /></a></td>
+														
+						</tr>
+						
+					</tbody>
+
+				</table>
+		<br>
+			<div>
+				<h4 class="card-title">
+					<a th:href="@{/listarduc}" class="btn btn-primary">VOLVER</a>
+				</h4>
+			</div>
+			<br>
+		</div>
+		</div>
+		</div>
+		</div>
+
+</body>
+</html>

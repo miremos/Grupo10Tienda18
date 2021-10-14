@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container py-4">
+
+		<div class="card bg-light">
+			<div class="card-header" th:text="${titulo}"></div>
+			<div class="card-body">
+			
+			<form class="d-flex" th:action="@{/ver/} + ${cliente.id}"  method="GET" >
+				
+					<input class="form-control me-2" type="number"  th:name="id" 
+					placeholder="Numero de cedula" aria-label="Search" required>
+					<a class="btn btn-primary btn-xs" th:href="@{/ver/} + ${cliente.id}" th:text="${cliente.id}"></a>
+				<button class="btn btn-outline-primary"  type="submit"  >BUSCAR</button>
+
+			</form>
+				
+
+				<ul class="list-group">
+					<li class="list-group-item active" th:text="${id}"></li>
+					<li class="list-group-item active" th:text="${cliente.nombre_cliente}"></li>
+					<li class="list-group-item" th:text="${cliente.direccion_cliente}"></li>
+					<li class="list-group-item" th:text="${cliente.email_cliente}"></li>
+					<li class="list-group-item" th:text="${cliente.telefono_cliente}"></li>
+				</ul>
+
+			</div>
+		</div>
+
+	</div>
+
+	
+</body>
+</html>

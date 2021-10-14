@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head">
+
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="body.css">
+<link rel="stylesheet" href="tabla.css">
+</head>
+<body>
+
+
+
+	
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container py-4">
+
+		<div class="card bg-light">
+		
+			<div class="card-header" th:text="${titulo}"></div>
+			<div class="card-body">
+			
+			
+			<nav class="navbar navbar-light bg-light">
+			<div class="container-fluid">
+		
+		
+			</div>
+			</nav>
+			
+			
+				
+			
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>CEDULA</th>
+							<th>NOMBRE</th>
+							<th>DIRECCION</th>
+							<th>EMAIL</th>
+							<th>TELEFONO</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+					
+					<tr th:each="cliente: ${clientes}">										
+							<td th:text="${cliente.id}"></td>
+							<td th:text="${cliente.nombre_cliente}"></td>
+							<td th:text="${cliente.direccion_cliente}"></td>
+							<td th:text="${cliente.email_cliente}"></td>
+							<td th:text="${cliente.telefono_cliente}"></td>
+							
+						</tr>
+						
+					</tbody>
+
+				</table>
+				<nav th:replace="paginator-nav :: paginator"></nav>
+			</div>
+			<div>
+				<h4 class="card-title">
+					<a href="reportes.jsp" class="btn btn-primary">VOLVER</a>
+				</h4>
+			</div>
+		</div>
+		
+	</div>
+	
+	
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

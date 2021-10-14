@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/css/estilos_agregar.css}" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+<head th:replace="layout/layout :: head"></head>
+<body>
+
+	<header th:replace="layout/layout :: header"></header>
+
+
+
+	<div class="container py-4">
+
+		<div class="card bg-dark text-white" >
+			<div class="card-header" th:text="${titulo}"></div>
+			
+
+				<div th:object="${venta}" th:remove="tag">
+					<ul th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+						<li th:each="err: ${#fields.errors('*')}" th:text="${err}"></li>
+					</ul>
+				</div>
+				
+				
+				<form th:action="@{/formventa}" th:object="${venta}" method="post" enctype="multipart/form-data">
+				<img class="img" th:src="@{/images/4.jpg}" alt="100" width="370" />
+				
+				<div class="card-body">
+				<div class="contenedor">
+				
+				
+				
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Cedula cliente</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{cedula_cliente}" class="form-control"
+								th:errorclass="'form-control alert-danger'" /> <small
+								class="form-text text-danger"
+								th:if="${#fields.hasErrors('cedula_cliente')}" th:errors="*{cedula_cliente}"></small>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Cedula usuario</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{cedula_usuario}" class="form-control"
+								th:errorclass="'form-control alert-danger'" /> <small
+								class="form-text text-danger"
+								th:if="${#fields.hasErrors('cedula_usuario')}" th:errors="*{cedula_usuario}"></small>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">IVA</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{iva_venta}" class="form-control"
+								th:errorclass="'form-control alert-danger'" /> <small
+								class="form-text text-danger"
+								th:if="${#fields.hasErrors('iva_venta')}" th:errors="*{iva_venta}"></small>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Total venta</label>
+						<div class="col-sm-6">
+							<input type="number" class="form-control" th:field="*{total_venta}"
+								th:errorclass="'form-control alert-danger'" /> <small
+								class="form-text text-danger"
+								th:if="${#fields.hasErrors('total_venta')}" th:errors="*{total_venta}"></small>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Valor venta</label>
+						<div class="col-sm-6">
+							<input type="number" class="form-control" th:field="*{valor_venta}"
+								th:errorclass="'form-control alert-danger'" /> <small
+								class="form-text text-danger"
+								th:if="${#fields.hasErrors('valor_venta')}" th:errors="*{valor_venta}"></small>
+						</div>
+					</div>
+				
+					<div class="form-group">
+						<input type="submit" name="accion" value="AGREGAR"
+							class="btn btn-outline-success btn-lg"> <a
+							class="btn btn-outline-primary btn-lg" type="button"
+							th:href="@{/listarventas}">CANCELAR</a>
+					</div>
+				</div>
+				</div>
+				
+				</form>
+				
+	
+			
+		</div>
+	</div>
+	
+</body>
+</html>

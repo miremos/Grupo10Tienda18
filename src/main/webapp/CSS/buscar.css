@@ -1,0 +1,32 @@
+@charset "ISO-8859-1";
+
+*{
+	margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.contenedor .agregar{
+	margin-top: 20px
+}
+.contenedor{
+	margin-top: -27px;
+	width: 80%;
+	align-items: center;
+	align-content: center;
+	
+}
+
+table{
+	
+	margin: 10px;
+}
+
+.titulo{
+	margin-top: 15px;
+}
+
+a{
+	margin-left: 100px;
+}

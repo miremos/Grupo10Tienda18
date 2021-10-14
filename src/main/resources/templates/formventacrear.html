@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/css/estilos_agregar.css}" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+<head th:replace="layout/layout :: head"></head>
+<body>
+
+	<header th:replace="layout/layout :: header"></header>
+
+
+
+	<div class="container py-4">
+
+		<div class="card bg-dark text-white" >
+			<div class="card-header" th:text="${titulo}"></div>
+			
+					
+				
+				
+				
+				<form th:action="@{/formventa}" th:object="${venta}" method="post" enctype="multipart/form-data">
+				<img class="img" th:src="@{/images/4.jpg}" alt="100" width="370" />
+				
+				<div class="card-body">
+				<div class="contenedor">
+				
+				
+				
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Cedula cliente</label>
+						<div class="col-sm-6">
+							<input type="text" name="cedula_cliente" class="form-control"
+								 /> <small
+								class="form-text text-danger"
+								></small>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Cedula usuario</label>
+						<div class="col-sm-6">
+							<input type="text" name="cedula_usuario" class="form-control"
+								/> <small
+								class="form-text text-danger"
+								></small>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">IVA</label>
+						<div class="col-sm-6">
+							<input type="text" name="iva_venta" class="form-control"
+								 /> <small
+								class="form-text text-danger"
+								></small>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Total venta</label>
+						<div class="col-sm-6">
+							<input type="number" class="form-control" name="total_venta"
+								 /> <small
+								class="form-text text-danger"
+								></small>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Valor venta</label>
+						<div class="col-sm-6">
+							<input type="number" class="form-control" name="valor_venta"
+								 /> <small
+								class="form-text text-danger"
+								></small>
+						</div>
+					</div>
+				
+					<div class="form-group">
+						<input type="submit" name="accion" value="AGREGAR"
+							class="btn btn-outline-success btn-lg"> <a
+							class="btn btn-outline-primary btn-lg" type="button"
+							th:href="@{/listarventas}">CANCELAR</a>
+					</div>
+				</div>
+				</div>
+				
+				</form>
+				
+	<form th:action="@{/marcaclienteventa}" th:object="${coche}" method="get" class="form-inline my-2 my-lg-0" enctype="multipart/form-data">
+      <label class = "label" >CEDULA CLIENTE  </label>
+      <br>
+      <input class="form-control mr-sm-2" type="number"  name="idb"  placeholder="Numero de Cedula" aria-label="Search">
+      <button class="btn btn-info" style="width:150px; margin-left:10px; " type="submit"><i class="fas fa-search"></i> Buscar</button>
+      <ul>
+  <li th:each="data : ${cochesPorMarca}" th:text="${data.id}" > </li>
+  <li th:each="data : ${cochesPorMarca}" th:text="${data.nombre_cliente}" > </li>
+  
+  
+</ul>
+    </form>
+    <br>
+	
+</body>
+</html>
